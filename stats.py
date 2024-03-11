@@ -37,3 +37,8 @@ def reg_summary(fitted_model, exclude_fe=True):
         summary_df = summary_df[~summary_df['variable'].apply(is_fe_var)]
         
     return summary_df
+
+def swap_column_multiindex_order(df):
+    df = df.swaplevel(axis='columns')
+    df.sort_index(axis=1, level=0, sort_remaining=False, inplace=True)
+    return df
