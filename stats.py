@@ -1,3 +1,8 @@
+"""Functions for statistics and tabular data analysis."""
+
+import pandas as pd
+import re
+
 def is_fe_var(variable_name):
     """Whether the variable name indicates a Fixed Effect, C(<something>)."""
     return bool(re.match(r'C\(.*\)', variable_name))
